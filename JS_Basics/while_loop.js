@@ -82,13 +82,28 @@ function findBiggestNumber(input) {
       break;
     }
 
-    if(input[index] >= max) {
-      max = input[index];
+    if(Number(input[index]) >= max) {
+      max = Number(input[index]);
     }
     index++;
   }
 }
 
-findBiggestNumber(["100","99","80","70","Stop"]);
+function findSmallestNumber(input) {
+  let min = Number(input[0]);
+  let index = 1;
+
+  while(true) {
+    if(input[index] == "Stop") {
+      console.log(min);
+      break;
+    }
+
+    if(Number(input[index]) < min) {
+      min = Number(input[index]);
+    }
+    index++;
+  }
+}
 
 
