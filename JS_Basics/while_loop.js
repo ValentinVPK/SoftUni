@@ -106,4 +106,34 @@ function findSmallestNumber(input) {
   }
 }
 
+function passingClass(input) {
+  let name = input[0];
+  let classNumber = 1;
+  let grade = 0;
+  let didntPass = false;
+
+  while(true) {
+    if(classNumber == 13) {
+      console.log(`${name} graduated. Average grade: ${(grade / 12).toFixed(2)}`);
+      break;
+    }
+
+    if(Number(input[classNumber]) < 4) {
+      if(didntPass) {
+        console.log(`${name} has been excluded at ${classNumber - 1} grade`);
+        break;
+      }
+      else {
+        didntPass = true;
+      }
+    }
+
+    grade = grade + Number(input[classNumber++]);
+  }
+}
+
+
+
+
+
 
